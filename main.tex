@@ -2,6 +2,15 @@
 
 \usepackage{sectsty}
 \usepackage{graphicx}
+\usepackage{xcolor}
+
+\newcommand{\brian}[1]{{\color{green}{Brian: #1}}} % Brian
+\newcommand{\carl}[1]{{\color{red}{Carl: #1}}} % carl
+\newcommand{\christian}[1]{{\color{purple}{Christian: #1}}} % Christian
+\newcommand{\ihsin}[1]{{\color{blue}{I-Hsin: #1}}} % I-Hsin
+\newcommand{\kaoutar}[1]{{\color{brown}{Kaoutar: #1}}} % Kaoutar
+\newcommand{\wenmei}[1]{{\color{orange}{Wen-Mei: #1}}} % wen-mei
+
 
 % Margins
 \topmargin=-0.45in
@@ -11,29 +20,126 @@
 \textheight=9.0in
 \headsep=0.25in
 
-\title{ Title}
-\author{ Author }
-\date{\today}
+\title{ Composable Computing: Opportunities and Challenges }
+\author{
+     Brian Pan\\
+     H3 Systems
+\and
+    Carl Pearson\\
+    Sandia National Labs
+\and
+    Christian Pinto\\
+    IBM Research Europe
+\and
+    I-Hsin Chung\\
+    IBM T. J. Watson Research
+\and
+    Kaoutar Maghraoui\\
+    IBM T. J. Watson Research
+\and
+    Wen-Mei Hwu\\
+    Nvidia
+}
+\date{Draft of \today}
 
 \begin{document}
 \maketitle	
-\pagebreak
 
-% Optional TOC
-% \tableofcontents
-% \pagebreak
+An example citation~\cite{gao2016network}
 
-%--Paper--
+\brian{a note from Brian}
 
-\section{Section 1}
+\carl{a note from Carl}
 
-Lorem Impsum
+\christian{a note from Christian}
+
+\kaoutar{a note from Kaoutar}
+
+\ihsin{a note from I-Hsin}
+
+\wenmei{a note from Wen-Mei}
+
+\section{What is Composable Computing}
+
+\carl{A system in which the hardware resources are abstract, and can be provisioned to produce a reified computer, especially through a programmatic management interface.}
+
+\section{The Current State of Composable Computing}
+
+\section{Advantages and Disadvantages of Composable Computing}
+
+Advantages vs. Cloud
+\begin{itemize}
+\item \carl{cloud-like operations on sensitive data in-house}
+\item \carl{don't write your competitors a check every month}
+\end{itemize}
+
+Advantages vs. Traditional Datacenter
+\begin{itemize}
+\item \carl{improved utilization of resources through bin-packing over workloads; compute-to-memory utilization varies by 3 orders of magnitude~\cite{gao2016network}}
+\item \carl{Flexible for workloads that change over time}
+\end{itemize}
+
+Advantages vs. time-shared computing
+\begin{itemize}
+\item \carl{larger pools of addressable memory may remove parallelization overheads; i.e. sometimes we parallelize because a single node is too small}
+\item \carl{Remote memory can be backed by SSD as long as latency requirements are met}
+\end{itemize}
+
+Disadvantages vs. Cloud
+\begin{itemize}
+\item \carl{datacenter capital costs}
+\end{itemize}
+
+Disadvantages vs. Traditional datacenter
+\begin{itemize}
+\item \carl{resource orchestration}
+\end{itemize}
+
+Disadvantages vs. time-shared computing
+\begin{itemize}
+\item \carl{power use / energy efficiency}
+\end{itemize}
+
+\section{Combining HPC Workflows with Composable Systems}
+
+\carl{Easy access to various hardware configurations}
+
+\carl{Batch submission systems}
+
+\carl{Programming models: hardware, hypervisor, and application level}
+
+\carl{Finer-grained resource accounting}
+
+\section{Robustness}
+\carl{proactive approaches: self-healing and pre-emptive migration are natural when everything is virtualized anyway}
+
+\carl{reactive: checkpoint and restart (storage is virtualized), migration (PEs are virtualized), replication (ask for 1 GPU, get 3)}
+
+\section{Changes to the Datacenter}
+
+\carl{hot-plug?}
+
+\carl{drivers?}
+
+\section{Coping with Heterogeneous Devices}
+
+\carl{profiling discussion?}
+
+\section{Looking Toward the Future}
+
+\subsection{Challenges}
+
+\carl{Latency}
+
+\carl{Security \& resource isolation}
+
+\carl{power / energy consumption}
+
+\subsection{Opportunities}
 
 
-\pagebreak
-\section{Section 2}
-Lorem Ipsum \\
 
-%--/Paper--
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{main} % Entries are in the main.bib file
 
 \end{document}
